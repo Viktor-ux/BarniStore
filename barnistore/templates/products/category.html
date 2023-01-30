@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block title %} Categories {% endblock %}
+{% block content %}
+
+{{ category.name }}
+{% for product in category.products.all %}
+
+{% include 'includes/products_card.html' %}
+
+{% endfor %}
+
+{% endblock %}

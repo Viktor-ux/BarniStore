@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% load thumbnail %}
+
+{% block title %} Product page {% endblock %}
+
+{% block content %}
+
+<div class="w-full p-6 flex flex-col">
+    <div class="pt-3 flex flex-col items-center justify-between">
+    {% thumbnail product.image "200x500" crop="center" as im %}
+    <img class="hover:grow hover:shadow-lg" src="{{ im.url }}">
+    {% endthumbnail %}
+
+            <p class="">{{product.name}}</p>
+            <p class="">{{ product.description }}</p>
+            <p> Категория: <a href="{% url 'products:category' product.category.slug %}">{{ product.category.name }}</p></a>
+
+        <p class="pt-1 text-gray-900">₽ {{ product.price }}</p>
+    </div>
+    </a>
+</div>
+
+{% endblock %}
