@@ -32,7 +32,6 @@ def category(request, slug):
 
 def create(request):
     """Product create"""
-    products = Products.objects.all()[:10]
-    return render(request, 'products/index.html',
-    {'products': products},
+    context = {}
+    return render(request, 'products/product_create.html', context,
     )
