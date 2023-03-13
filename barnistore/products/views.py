@@ -7,6 +7,7 @@ from products.models import Products, Category
 
 
 def index(request):
+    """Main page"""
     products = Products.objects.all()[:10]
     return render(request, 'products/index.html',
     {'products': products},
@@ -14,6 +15,7 @@ def index(request):
 
 
 def product(request, slug):
+    """Product page"""
     product = Products.objects.get(slug=slug)
     return render(request, 'products/product.html',
     {'product': product},
@@ -21,7 +23,16 @@ def product(request, slug):
 
 
 def category(request, slug):
+    """Category page"""
     category = Category.objects.get(slug=slug)
     return render(request, 'products/category.html',
     {'category': category},
+    )
+
+
+def create(request):
+    """Product create"""
+    products = Products.objects.all()[:10]
+    return render(request, 'products/index.html',
+    {'products': products},
     )
