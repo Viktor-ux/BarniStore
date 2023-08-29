@@ -1,2 +1,3 @@
 # BarniStore
-Spirits review service
+Проект магазина элитных напитков.
+Пока что в разработке)
